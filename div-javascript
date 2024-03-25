@@ -1,0 +1,10 @@
+const functions = require('@google-cloud/functions-framework');
+
+functions.http('DIVfun', (req, res) => {
+  const { X, Y } = req.body;
+  if (Y === 0) {
+    return res.status(400).json({ error: 'Cannot divide by zero' });
+  }
+  const result = X / Y;
+  res.json({ X, Y, Result: result });
+});
