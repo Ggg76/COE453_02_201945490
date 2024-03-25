@@ -1,0 +1,120 @@
+swagger: "2.0"
+info:
+  title: Calculator API
+  description: A simple calculator API that performs basic arithmetic operations
+  version: "1.0.0"
+host: api-calculator.apigateway.vm-2-415316.cloud.goog
+basePath: "/"
+schemes:
+  - https
+produces:
+  - application/json
+paths:
+  /add:
+    post:
+      summary: "Add two numbers"
+      operationId: "add"
+      x-google-backend:
+        address: https://us-central1-vm-2-415316.cloudfunctions.net/function-ADD
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            type: object
+            required:
+              - X
+              - Y
+            properties:
+              X:
+                type: integer
+              Y:
+                type: integer
+      responses:
+        200:
+          description: "Successful operation"
+  /sub:
+    post:
+      summary: "Subtract two numbers"
+      operationId: "sub"
+      x-google-backend:
+        address: https://us-central1-vm-2-415316.cloudfunctions.net/function-SUB
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            type: object
+            required:
+              - X
+              - Y
+            properties:
+              X:
+                type: integer
+              Y:
+                type: integer
+      responses:
+        200:
+          description: "Successful operation"
+  /mul:
+    post:
+      summary: "Multiply two numbers"
+      operationId: "mul"
+      x-google-backend:
+        address: https://us-central1-vm-2-415316.cloudfunctions.net/function-MUL
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            type: object
+            required:
+              - X
+              - Y
+            properties:
+              X:
+                type: integer
+              Y:
+                type: integer
+      responses:
+        200:
+          description: "Successful operation"
+  /div:
+    post:
+      summary: "Divide two numbers"
+      operationId: "div"
+      x-google-backend:
+        address: https://us-central1-vm-2-415316.cloudfunctions.net/function-DIV
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            type: object
+            required:
+              - X
+              - Y
+            properties:
+              X:
+                type: integer
+              Y:
+                type: integer
+      responses:
+        200:
+          description: "Successful operation"
