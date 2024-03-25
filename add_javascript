@@ -1,0 +1,7 @@
+const functions = require('@google-cloud/functions-framework');
+
+functions.http('ADDfun', (req, res) => {
+  const { X, Y } = req.body;
+  const sum = X + Y;
+  res.json({ X, Y, Result: sum });
+});
