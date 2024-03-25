@@ -1,0 +1,7 @@
+const functions = require('@google-cloud/functions-framework');
+
+functions.http('DIVfun', (req, res) => {
+  const { X, Y } = req.body;
+  const sub = X / Y;
+  res.json({ X, Y, Result: sub });
+});
